@@ -13,8 +13,11 @@ public class NavigatePages
 	public static void main(String[] args) 
 	{
 		
-		WebDriver driver = new FirefoxDriver();
- 
+		WebDriver driver;
+		
+		System.setProperty("webdriver.gecko.driver", "C:\\geckodriver-v0.14.0-win32\\geckodriver.exe");
+ 		driver =new FirefoxDriver();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		String appUrl = "https://www.valtech.com/";
 		driver.get(appUrl);
 
